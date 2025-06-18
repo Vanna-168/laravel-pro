@@ -53,7 +53,8 @@ Route::post('/category/store', [CategoriesController::class, 'store'])->name('ca
 
 Route::get('upload/search', [ProductController::class, 'search'])->name('search');
 
-Route::get('/export-product', [ExportController::class, 'export']);
+Route::get('/export-product', [ExportController::class, 'productExcel']);
+Route::get('/export-report', [ExportController::class, 'reportExcel']);
 
 //profiles
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
@@ -65,5 +66,7 @@ Route::get('/invoice', [InvoiceControler::class, 'printInvoice'])->name('invoice
 
 Route::get('/sale', [SaleControler::class, 'reportSale'])->name('sale');
 Route::get('/order', [OrderController::class, 'reportOrder'])->name('order');
+Route::get('/order-detail-json/{id}', [OrderController::class, 'getOrderDetailJson']);
+Route::get('/sale-detail-json/{id}', [SaleControler::class, 'getSaleDetailJson']);
 Route::get('/report/orderDetail', [ReportController::class, 'orderDetailReport'])->name('report.orderDetail');
 Route::get('/report/saleDetail', [ReportController::class, 'saleDetailReport'])->name('report.saleDetail');

@@ -31,10 +31,13 @@
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
+                @php
+                $id=1;
+                @endphp
                 <tbody>
                     @foreach ($categories as $category)
                     <tr>
-                        <td>{{$category->id}}</td>
+                        <td>{{$id++}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->description}}</td>
                         <td class="text-center">
@@ -45,6 +48,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div>
+                {{ $categories->links() }}
+            </div>
         </div>
     </div>
 </div>

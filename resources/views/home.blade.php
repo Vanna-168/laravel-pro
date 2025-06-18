@@ -67,27 +67,27 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
             <hr class="sidebar-divider my-0">
             <li class="nav-item">
                 <a class="nav-link" href="{{route('product.menu')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                    <i class="fa-regular fa-calendar-days"></i>
                     <span>Menu</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('order') }}">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span>Order</span>
                 </a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('sale') }}">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-solid fa-chart-line"></i>
                     <span>Sale</span>
                 </a>
             </li>
@@ -101,19 +101,19 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('product.index') }}">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-solid fa-shirt"></i>
                     <span>Product</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('brand.index') }}">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-brands fa-buffer"></i>
                     <span>Brand</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('category.index') }}">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-brands fa-discord"></i>
                     <span>Category</span>
                 </a>
             </li>
@@ -122,7 +122,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-regular fa-clipboard"></i>
                     <span>Reports</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -145,9 +145,9 @@
             </li>
             <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                <a class="nav-link" href="{{ url('user') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>User</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">

@@ -9,7 +9,7 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::orderBy('id', 'desc')->get();
+        $brands = Brand::orderBy('id', 'desc')->paginate(10);
         return view('brand.index', compact('brands'));
     }
     public function store(Request $request)

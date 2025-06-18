@@ -38,10 +38,13 @@
                         <th width="10%" class="text-center">Action</th>
                     </tr>
                 </thead>
+                @php
+                $id=1;
+                @endphp
                 <tbody>
                     @foreach ($products as $pro)
                     <tr>
-                        <td>{{$pro->id}}</td>
+                        <td>{{$id++}}</td>
                         <td>{{$pro->name}}</td>
                         <td>{{$pro->description}}</td>
                         <td>${{$pro->price}}</td>
@@ -63,6 +66,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div>
+                {{ $products->links() }}
+            </div>
         </div>
     </div>
 </div>

@@ -53,18 +53,44 @@ class SaleControler extends Controller
         $sales = DB::table('sales')
             ->join('users', 'sales.user_id', '=', 'users.id')
             ->join('customers', 'sales.customer_id', '=', 'customers.id')
-            ->join('sale_details', 'sales.id', '=', 'sale_details.sale_id')
             ->select(
                 'sales.*',
                 'users.name as user_name',
-                'sale_details.quantity as quantity',
-                'sale_details.unit_price as unit_price',
-                'sale_details.discount_amount as discount',
                 'customers.firstname as customer_fname',
                 'customers.lastname as customer_lname',
             )
             ->orderBy('sales.id', 'desc')
             ->paginate(10);
         return view('report.sale', compact('sales'));
+    }
+    public function getSaleDetailJson($id)
+    {
+        // $details = SaleDetail::where('sale_id', $id)->get();
+        try {
+            $details = DB::table('sale_details')
+                ->join('sales', 'sale_details.sale_id', '=', 'sales.id')
+                ->join('invoices', 'sales.id', '=', 'invoices.sale_id')
+                ->join('users', 'sales.user_id', '=', 'users.id')
+                ->join('customers', 'sales.customer_id', '=', 'customers.id')
+                ->join('products', 'sale_details.product_id', '=', 'products.id')
+                ->select(
+                    'sale_details.*',
+                    'sales.id as sale_id',
+                    'sales.sale_date as sale_date',
+                    'sales.payment_status as payment_status',
+                    'sales.payment_method as payment_method',
+                    'products.name as product_name',
+                    'products.size as product_size',
+                    'invoices.id as invoice_id',
+                    'invoices.invoice_number as invoice_number',
+                    'users.name as user_name',
+                    'customers.firstname as customer_fname',
+                    'customers.lastname as customer_lname',
+                )
+                ->where('sales.id', $id)->get();
+            return response()->json($details);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

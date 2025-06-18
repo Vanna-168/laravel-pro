@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function index()
     {
         // $products = Product::all();
-        $products = Product::orderBy('id', 'desc')->where('status', 1)->get();
+        $products = Product::orderBy('id', 'desc')->where('status', 1)->paginate(10);
 
         return view('product.index', compact('products'));
     }

@@ -32,10 +32,13 @@
                         <th width="10%" class="text-center">Action</th>
                     </tr>
                 </thead>
+                @php
+                $id=1;
+                @endphp
                 <tbody>
                     @foreach ($brands as $brand)
                     <tr>
-                        <td>{{$brand->id}}</td>
+                        <td>{{$id++}}</td>
                         <td>{{$brand->name}}</td>
                         <td>{{$brand->description}}</td>
                         <td><img src="{{asset($brand->image)}}" alt="" width="40"></td>
@@ -47,6 +50,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div>
+                {{ $brands->links() }}
+            </div>
         </div>
     </div>
 </div>
