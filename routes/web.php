@@ -54,7 +54,8 @@ Route::post('/category/store', [CategoriesController::class, 'store'])->name('ca
 Route::get('upload/search', [ProductController::class, 'search'])->name('search');
 
 Route::get('/export-product', [ExportController::class, 'productExcel']);
-Route::get('/export-report', [ExportController::class, 'reportExcel']);
+Route::get('/export-report-sale', [ExportController::class, 'reportSaleExcel']);
+Route::get('/export-report-order', [ExportController::class, 'reportOrderExcel']);
 
 //profiles
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
