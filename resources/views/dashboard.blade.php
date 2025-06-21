@@ -125,7 +125,7 @@
                             <img src="https://via.placeholder.com/40" class="rounded me-2" alt="Ice Cappucino">
                             <div class="flex-grow-1">
                                 <h6 class="mb-0">Shoe</h6>
-                                <div class="text-warning">$2.25</div>
+                                <div class="text-warning">$16.00</div>
                             </div>
                             <div class="fw-bold">278</div>
                         </div>
@@ -134,7 +134,7 @@
                             <img src="https://via.placeholder.com/40" class="rounded me-2" alt="Ice Latte">
                             <div class="flex-grow-1">
                                 <h6 class="mb-0">T-Shirt</h6>
-                                <div class="text-warning">$12.75</div>
+                                <div class="text-warning">$12.00</div>
                             </div>
                             <div class="fw-bold">490</div>
                         </div>
@@ -143,7 +143,7 @@
                             <img src="https://via.placeholder.com/40" class="rounded me-2" alt="Ice Cappucino">
                             <div class="flex-grow-1">
                                 <h6 class="mb-0">Shoe</h6>
-                                <div class="text-warning">$22.25</div>
+                                <div class="text-warning">$20.00</div>
                             </div>
                             <div class="fw-bold">346</div>
                         </div>

@@ -105,4 +105,9 @@ class UserController extends Controller
         // }
         // return redirect()->back()->with('error', 'Can not update data...');
     }
+    public function getUsers()
+    {
+        $users = Auth::user()->paginate(10);
+        return view('auth.user', compact('users'));
+    }
 }

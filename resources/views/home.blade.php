@@ -62,15 +62,15 @@
             </a>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
+            
             <!-- Nav Item - Dashboard -->
+            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/')}}">
                     <i class="fa-solid fa-house"></i>
                     <span>Dashboard</span></a>
             </li>
-            <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{route('product.menu')}}">
                     <i class="fa-regular fa-calendar-days"></i>
@@ -93,6 +93,24 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="true" aria-controls="collapseTwo">
+                        <i class="fa-regular fa-clipboard"></i>
+                        <span>Reports</span>
+                    </a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-1 collapse-inner rounded">
+                            <a class="collapse-item" href="{{route('report.orderDetail')}}">Order Detail</a>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-1 collapse-inner rounded">
+                            <a class="collapse-item" href="{{route('report.saleDetail')}}">Sale Detail</a>
+                        </div>
+                    </div>
+                </li>
+                <hr class="sidebar-divider">
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
                 Interface
@@ -105,12 +123,14 @@
                     <span>Product</span>
                 </a>
             </li>
+            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('brand.index') }}">
                     <i class="fa-brands fa-buffer"></i>
                     <span>Brand</span>
                 </a>
             </li>
+            <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('category.index') }}">
                     <i class="fa-brands fa-discord"></i>
@@ -119,43 +139,17 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fa-regular fa-clipboard"></i>
-                    <span>Reports</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-1 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('report.orderDetail')}}">Order Detail</a>
-                    </div>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-1 collapse-inner rounded">
-                        <a class="collapse-item" href="{{route('report.saleDetail')}}">Sale Detail</a>
-                    </div>
-                </div>
-            </li>
             
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('table')}}">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
-            </li>
             <!-- Nav Item - Charts -->
+            @role('admin')
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('user') }}">
+                <a class="nav-link" href="{{ route('users') }}">
                     <i class="fas fa-fw fa-user"></i>
                     <span>User</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Settings</span></a>
-            </li>
-            <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
+            @endrole
+            <!-- Divider -->
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

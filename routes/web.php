@@ -60,6 +60,7 @@ Route::get('/export-report-order', [ExportController::class, 'reportOrderExcel']
 //profiles
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::post('/profile/update', [UserController::class, 'update'])->name('profile.update');
+Route::get('users', [UserController::class, 'getUsers'])->name('users');
 
 Route::post('/checkout', [OrderController::class, 'checkout'])->name('checkout');
 Route::post('/complete', [SaleControler::class, 'complete'])->name('complete');
