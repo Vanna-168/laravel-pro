@@ -28,7 +28,9 @@
                         <th>No</th>
                         <th>Name</th>
                         <th>Description</th>
+                        @role('admin')
                         <th class="text-center">Action</th>
+                        @endrole
                     </tr>
                 </thead>
                 @php
@@ -40,10 +42,12 @@
                         <td>{{$id++}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->description}}</td>
+                        @role('admin')
                         <td class="text-center">
                             <a href="" class=""><i class="fa fa-edit text-primary fs-5"></i></a>
                             <a href="" class="ms-2"><i class="fa fa-trash text-danger fs-5"></i></a>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

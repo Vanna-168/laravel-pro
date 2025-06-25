@@ -35,7 +35,9 @@
                         <th>Photo</th>
                         <th width="15%">Brand</th>
                         <th width="10%">Category</th>
+                        @role('admin')
                         <th width="10%" class="text-center">Action</th>
+                        @endrole
                     </tr>
                 </thead>
                 @php
@@ -56,12 +58,14 @@
                         </td>
                         <td>{{$pro->brand->name}}</td>
                         <td>{{$pro->category->name}}</td>
+                        @role('admin')
                         <td class="text-center">
                             <a href="{{ route('product.formupdate', $pro->id) }}" class=""><i class="fa fa-edit text-primary fs-5"></i></a>
                             <a href="{{ route('product.delete', $pro->id) }}" class="ms-2"
                                 onclick="return confirm('Do you want to delete this item?')">
                                 <i class="fa fa-trash text-danger fs-5"></i></a>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

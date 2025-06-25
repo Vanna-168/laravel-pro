@@ -29,7 +29,9 @@
                         <th>Name</th>
                         <th>Description</th>
                         <th >Photo</th>
+                        @role('admin')
                         <th width="10%" class="text-center">Action</th>
+                        @endrole
                     </tr>
                 </thead>
                 @php
@@ -42,10 +44,12 @@
                         <td>{{$brand->name}}</td>
                         <td>{{$brand->description}}</td>
                         <td><img src="{{asset($brand->image)}}" alt="" width="40"></td>
+                        @role('admin')
                         <td class="text-center">
                             <a href="" class=""><i class="fa fa-edit fs-5"></i></a>
                             <a href="" class=""><i class="fa fa-trash text-danger fs-5 ms-3"></i></a>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>
